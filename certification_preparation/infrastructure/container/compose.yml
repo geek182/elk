@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  elasticsearch:
+    environment:
+      - TEST="test"
+      - TEST1="test"
+      - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
+    container_name: elastic
+    image: "docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}"
+    ports:
+      - 9200:9200
+      - 9300:9300
