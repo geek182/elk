@@ -10,3 +10,10 @@ services:
     ports:
       - 9200:9200
       - 9300:9300
+  kibana:
+    environment:
+      - ELASTICSEARCH_HOSTS="https://localhost:9200"
+    container_name: kibana
+    image: "docker.elastic.co/kibana/kibana:${STACK_VERSION}"
+    ports:
+      - 5601:5601
