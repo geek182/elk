@@ -50,6 +50,10 @@ connecting to the podman machine: </br>
 
  connecting to HTTP instead of HTTPS: </br>
  `received plaintext http traffic on an https channel`
+### Filebeat
+Filebeat and Elastic running incompatible version <br>
+
+`Nov 02 15:08:21 vagrant filebeat[16279]: {"log.level":"error","@timestamp":"2022-11-02T15:08:21.089Z","log.logger":"publisher_pipeline_output","log.origin":{"file.name":"pipeline/client_worker.go","file.line":150},"message":"Failed to connect to backoff(elasticsearch(https://172.29.36.151:9200)): Connection marked as failed because the onConnect callback failed: Elasticsearch is too old. Please upgrade the instance. If you would like to connect to older instances set output.elasticsearch.allow_older_versions to true. ES=8.4.3, Beat=8.5.0","service.name":"filebeat","ecs.version":"1.6.0"}`
 
 ### Windows
 
@@ -61,3 +65,8 @@ Searching output strings using Powershell </br>
 
  Install Windows terminal
  `winget install Microsoft.WindowsTerminal`
+
+ ### Podman issues
+Podman container on Windows cannot access host by ip or dns </br>
+
+ https://github.com/containers/podman/issues/13966
