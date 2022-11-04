@@ -16,8 +16,13 @@ Start pod </br>
 Stop pod </br>
 `podman pod stop elk`
 
+Format output </br>
+`podman pod  ps --format json` </br>
+`podman pod  ps --format "{{.Name }} {{.Status}} "` </br>
+`podman ps -a --format "{{.ID}}  {{.Image}}  {{.Labels}}  {{.Mounts}}"`</br>
+`podman pod ps --format "{{.Status}}" --filter name=elk`
 
-Using podman: </br>
+### Using podman: </br>
 
 elastic bootstrap failling: </br>
 
@@ -65,6 +70,10 @@ Searching output strings using Powershell </br>
 
  Install Windows terminal
  `winget install Microsoft.WindowsTerminal`
+
+ Running powershell commands without modifying the default script execution policy </br>
+
+ `powershell -nologo -noexit -executionpolicy bypass -File .\configure-containers.ps1`
 
  ### Podman issues
 Podman container on Windows cannot access host by ip or dns </br>
